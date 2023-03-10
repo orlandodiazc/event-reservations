@@ -23,7 +23,8 @@
     "object-curly-newline": "warn",
     "no-param-reassign": "warn",
     "indent": "warn",
-    "react/jsx-indent": "warn"
+    "react/jsx-indent": "warn",
+    "operator-linebreak": "warn"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
