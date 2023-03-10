@@ -1,3 +1,5 @@
-const Home = () => <div>Home</div>;
+import RocketList from '../components/RocketList';
+
+const Home = () => <RocketList />;
 
 export default Home;
