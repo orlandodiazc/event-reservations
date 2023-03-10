@@ -6,11 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "npx eslint . --fix && npx stylelint \"**/*.{css,scss}\" --fix"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.2",
+    "vite": "^4.1.0",
+    "@vitejs/plugin-react": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.x",
@@ -19,7 +23,6 @@
     "@babel/preset-react": "7.x",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
     "eslint": "7.x",
     "eslint-config-airbnb": "18.x",
     "eslint-plugin-import": "2.x",
@@ -29,7 +32,6 @@
     "stylelint": "13.x",
     "stylelint-config-standard": "21.x",
     "stylelint-csstree-validator": "1.x",
-    "stylelint-scss": "3.x",
-    "vite": "^4.1.0"
+    "stylelint-scss": "3.x"
   }
 }
