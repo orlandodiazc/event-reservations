@@ -24,7 +24,9 @@
     "no-param-reassign": "warn",
     "indent": "warn",
     "react/jsx-indent": "warn",
-    "operator-linebreak": "warn"
+    "operator-linebreak": "warn",
+    "implicit-arrow-linebreak": "warn",
+    "function-paren-newline": "warn"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
