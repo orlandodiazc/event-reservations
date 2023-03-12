@@ -17,7 +17,15 @@ const apiSlice = createApi({
   }),
 });
 
-const { useGetRocketsQuery } = apiSlice;
-const { useGetMissionsQuery } = apiSlice;
+const updateReservation = (id, endpoint) =>
+  apiSlice.util.updateQueryData(endpoint, undefined, (draft) =>
+    draft.map((obj) => {
+      const objId = endpoint === 'getMissions' ? obj.mission_id : obj.id;
+      if (objId !== id) return obj;
+      return { ...obj, reserved: !obj.reserved };
+    }),
+  );
 
-export { apiSlice, useGetRocketsQuery, useGetMissionsQuery };
+const { useGetRocketsQuery, useGetMissionsQuery } = apiSlice;
+
+export { apiSlice, useGetRocketsQuery, useGetMissionsQuery, updateReservation };

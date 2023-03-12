@@ -13,22 +13,20 @@ import Mission from './Mission';
 const MissionList = () => {
   const { data: missions, isSuccess } = useGetMissionsQuery();
   return (
-    <>
-      <Table>
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {isSuccess &&
-            missions.map((mission) => <Mission key={mission.mission_id} mission={mission} />)}
-        </tbody>
-      </Table>
-    </>
+    <Table>
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        {isSuccess &&
+          missions.map((mission) => <Mission key={mission.mission_id} mission={mission} />)}
+      </tbody>
+    </Table>
   );
 };
 
