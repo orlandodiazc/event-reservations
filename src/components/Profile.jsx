@@ -18,27 +18,36 @@ const Profile = () => {
   const { data: rockets, isSuccess: isSuccessRockets } = useGetRocketsQuery();
   const { data: missions, isSuccess: isSuccessMissions } = useGetMissionsQuery();
   return (
-    <Container>
+    <Container className="py-4">
       <Row>
-        <Col>
-          <h1>My Missions</h1>
+        <Col md>
+          <h1 className="mb-3">My Missions</h1>
           <ListGroup>
             {isSuccessMissions &&
               missions.map(
                 (mission) =>
                   mission.reserved && (
-                    <ListGroup.Item key={mission.mission_id}>{mission.mission_name}</ListGroup.Item>
+                    <ListGroup.Item
+                      className="text-bg-dark border-secondary"
+                      key={mission.mission_id}
+                    >
+                      {mission.mission_name}
+                    </ListGroup.Item>
                   ),
               )}
           </ListGroup>
         </Col>
-        <Col>
-          <h1>My Rockets</h1>
+        <Col md>
+          <h1 className="mb-3">My Rockets</h1>
           <ListGroup>
             {isSuccessRockets &&
               rockets.map(
                 (rocket) =>
-                  rocket.reserved && <ListGroup.Item key={rocket.id}>{rocket.name}</ListGroup.Item>,
+                  rocket.reserved && (
+                    <ListGroup.Item className="text-bg-dark border-secondary" key={rocket.id}>
+                      {rocket.name}
+                    </ListGroup.Item>
+                  ),
               )}
           </ListGroup>
         </Col>

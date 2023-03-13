@@ -7,13 +7,13 @@ const Mission = ({ mission }) => {
   return (
     <tr>
       <td>{mission.mission_name}</td>
-      <td>{mission.description}</td>
+      <td style={{ minWidth: '30ch' }}>{mission.description}</td>
       <td>
         <Badge className={mission.reserved ? '' : 'bg-secondary'}>
           {mission.reserved ? 'MEMBER' : 'NOT A MEMBER'}
         </Badge>
       </td>
-      <td>
+      <td style={{ minWidth: '15ch' }}>
         <Button onClick={() => handleReservation(mission.mission_id, 'getMissions')}>
           {mission.reserved ? 'Leave Mission' : 'Join Mission'}
         </Button>

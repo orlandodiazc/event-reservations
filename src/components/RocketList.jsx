@@ -1,3 +1,4 @@
+import { Container } from 'react-bootstrap';
 import { useGetRocketsQuery } from '../redux/api/apiSlice';
 import Rocket from './Rocket';
 
@@ -20,6 +21,10 @@ import Rocket from './Rocket';
 
 const RocketList = () => {
   const { data: rockets, isSuccess } = useGetRocketsQuery();
-  return <>{isSuccess && rockets.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />)}</>;
+  return (
+    <Container className="py-4">
+      {isSuccess && rockets.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />)}
+    </Container>
+  );
 };
 export default RocketList;
