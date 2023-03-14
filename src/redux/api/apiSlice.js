@@ -17,16 +17,15 @@ const apiSlice = createApi({
   }),
 });
 
-const updateReservation = (id, endpoint) => {
-  // test
-  apiSlice.util.updateQueryData(endpoint, undefined, (draft) => draft.map((obj) => {
-    const objId = endpoint === 'getMissions' ? obj.mission_id : obj.id;
-    if (objId !== id) return obj;
-    return { ...obj, reserved: !obj.reserved };
-  }));
-};
+const updateReservation = (id, endpoint) =>
+  apiSlice.util.updateQueryData(endpoint, undefined, (draft) =>
+    draft.map((obj) => {
+      const objId = endpoint === 'getMissions' ? obj.mission_id : obj.id;
+      if (objId !== id) return obj;
+      return { ...obj, reserved: !obj.reserved };
+    }),
+  );
+
 const { useGetRocketsQuery, useGetMissionsQuery } = apiSlice;
 
-export {
-  apiSlice, useGetRocketsQuery, useGetMissionsQuery, updateReservation,
-};
+export { apiSlice, useGetRocketsQuery, useGetMissionsQuery, updateReservation };
