@@ -22,7 +22,7 @@ const Profile = () => {
       <Row>
         <Col md>
           <h1 className="mb-3">My Missions</h1>
-          <ListGroup>
+          <ListGroup className="mb-3">
             {isSuccessMissions &&
               missions.map(
                 (mission) =>
@@ -39,7 +39,7 @@ const Profile = () => {
         </Col>
         <Col md>
           <h1 className="mb-3">My Rockets</h1>
-          <ListGroup>
+          <ListGroup className="mb-3">
             {isSuccessRockets &&
               rockets.map(
                 (rocket) =>
